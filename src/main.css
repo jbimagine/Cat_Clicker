@@ -1,0 +1,19 @@
+body {
+    line-height: 2;
+    background: #222;
+    color: white;
+}
+
+#app {
+    display:flex;
+    justify-content:center;
+}
+
+.cat-img{
+    padding-top:10px;
+    height: 500px;
+}
+
+.cat-thumbnails {
+    height:50px;
+}
