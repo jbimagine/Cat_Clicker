@@ -2,13 +2,17 @@ body {
     line-height: 2;
     background: #222;
     color: white;
+    width: 100%;
+    font-size:22px;
 }
 
 #app {
     display:flex;
-    justify-content:center;
+   flex-direction:column;
+   align-items: center;
+   width:100%;
 }
-
+ 
 .cat-img{
     padding-top:10px;
     height: 500px;
@@ -16,4 +20,10 @@ body {
 
 .cat-thumbnails {
     height:50px;
+}
+
+#cat-nav {
+   width:1000px;
+   display:flex;
+   justify-content:space-around;
 }

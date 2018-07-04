@@ -6,27 +6,30 @@ export class CreateDomElements
         this.createDivEl = document.createElement('div');
         this.createdCatName = document.createElement('div');
         this.appId = document.getElementById('app');
+        this.catImgCntnr = document.getElementById('cat-img-cntnr');
+        this.catNav = document.getElementById('cat-nav');
     }
+    /******************************************************************** */
     createText(className)
     {
         this.createDivEl.setAttribute('class', className);
         this.createDivEl.innerHTML = 1;
-        this.appId.appendChild(this.createDivEl);
+        this.catNav.appendChild(this.createDivEl);
     }
-
+    /******************************************************************** */
     createCatName(catName)
     {
         this.createdCatName.innerHTML = catName;
-        this.appId.appendChild(this.createdCatName);
+        this.catNav.appendChild(this.createdCatName);
     }
-
+    /******************************************************************** */
     createImage(className, imgSrc)
     {
         this.createImgEl.setAttribute('class', className);
         this.createImgEl.setAttribute('src', imgSrc)
-        this.appId.appendChild(this.createImgEl);
+        this.catImgCntnr.appendChild(this.createImgEl);
     }
-
+    /******************************************************************** */
     clickImage ()
     {
         this.createImgEl.addEventListener('click', () =>{
@@ -34,9 +37,11 @@ export class CreateDomElements
         })
 
     }
+    /******************************************************************** */
 
     generateThumbnails ()
     {
 
     }
+    /******************************************************************** */
 }

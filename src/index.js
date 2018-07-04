@@ -27,7 +27,8 @@ const catImageClass = 'cat-img';
 
 let cat = new CreateDomElements();
 
-cat.createText(catText);
 cat.createCatName(catInfo1.catName);
+cat.createText(catText);
+
 cat.createImage(catImageClass, catInfo1.srcImage);
 cat.clickImage();
