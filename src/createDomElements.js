@@ -24,20 +24,12 @@ export class CreateDomElements
         this.catNav.appendChild(this.createdCatName);
     }
     /******************************************************************** */
-    createImage(className, imgSrc)
-    {
-        this.createImgEl = document.createElement('IMG');
-        this.createImgEl.setAttribute('class', className);
-        this.createImgEl.setAttribute('src', imgSrc);
-        this.catImgCntnr.appendChild(this.createImgEl);
-    }
-    /******************************************************************** */
     clickImage ()
     {
         this.createImgEl.addEventListener('click', () =>{
             this.createDivEl.innerHTML++;
         })
-    }
+    } 
     /******************************************************************** */
 
     generateThumbnails ()
@@ -71,6 +63,24 @@ export class CreateDomElements
             name4: 'Rosey',
             name5: 'Bruno'
         }
+    }
+    /******************************************************************** */
+    displayClickedImage()
+    {
+        this.clickedThumbNailImg;
+        this.navImages = document.getElementsByClassName('nav-images');
+        this.createImgEl = document.createElement('IMG');
+            for(let indx = 0; indx < this.navImages.length; indx++)
+            {
+                this.navImages[indx].addEventListener('click', ()=>{
+                this.clickedThumbNailImg = this.navImages[indx].src;
+                this.createImgEl.setAttribute('class', 'cat-img');
+                this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
+                this.catImgCntnr.appendChild(this.createImgEl);
+
+            })
+        }
+        
     }
     /******************************************************************** */
 }
