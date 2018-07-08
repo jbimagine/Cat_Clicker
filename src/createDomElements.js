@@ -13,7 +13,6 @@ export class CreateDomElements
     {
         this.createDivEl = document.createElement('div');
         this.createDivEl.setAttribute('class', className);
-        this.createDivEl.innerHTML = 1;
         this.catNav.appendChild(this.createDivEl);
     }
     /******************************************************************** */
@@ -73,13 +72,14 @@ export class CreateDomElements
             for(let indx = 0; indx < this.navImages.length; indx++)
             {
                 this.navImages[indx].addEventListener('click', ()=>{
+                     this.createDivEl.innerHTML = 0;
+
                     this.clickedThumbNailImg = this.navImages[indx].src;
                     this.createImgEl.setAttribute('class', 'cat-img');
                     this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
                     this.catImgCntnr.appendChild(this.createImgEl);
                 })
-        }
-        
+            }
     }
     /******************************************************************** */
 }
