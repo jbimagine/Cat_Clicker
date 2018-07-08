@@ -9,29 +9,28 @@ export class CreateDomElements
         this.navImagesWrapper = document.getElementById('nav-images-wrapper');
     }
     /******************************************************************** */
-    createText(className)
+    createNumText() //creates the number div
     {
         this.createDivEl = document.createElement('div');
-        this.createDivEl.setAttribute('class', className);
+        this.createDivEl.setAttribute('class', 'cat-cntnr');
         this.catNav.appendChild(this.createDivEl);
     }
     /******************************************************************** */
-    createCatName(catName)
+    createCatName()
     {
         this.createdCatName = document.createElement('div');
-        this.createdCatName.innerHTML = catName;
+        this.createdCatName.setAttribute('class', 'cat-names')
         this.catNav.appendChild(this.createdCatName);
     }
     /******************************************************************** */
-    iterClicksOnImage ()
+    increaseClicksOnImage () //will increase the number of clicks on the main image
     {
         this.createImgEl.addEventListener('click', () =>{
             this.createDivEl.innerHTML++;
         })
     } 
     /******************************************************************** */
-
-    generateThumbnails ()
+    generateThumbnails () //will create thumbnails of images
     {
         const catImgs = {
             src1: '/dist/imgs/cat_01.jpg',
@@ -53,31 +52,25 @@ export class CreateDomElements
         }
     }
     /******************************************************************** */
-    generateCatNames()
+    displayClickedImage() //function will display the image that is clicked from the thumbnail
     {
-        const catNames = {
-            name1: 'Sheeba',
-            name2: 'Basil',
-            name3: 'Laila',
-            name4: 'Rosey',
-            name5: 'Bruno'
-        }
-    }
-    /******************************************************************** */
-    displayClickedImage()
-    {
+
+        this.catNames = ['Sheeba', 'Basil', 'Laila', 'Rosey', 'Bruno'];
+
         this.clickedThumbNailImg;
         this.navImages = document.getElementsByClassName('nav-images');
         this.createImgEl = document.createElement('IMG');
             for(let indx = 0; indx < this.navImages.length; indx++)
             {
                 this.navImages[indx].addEventListener('click', ()=>{
-                     this.createDivEl.innerHTML = 0;
+            this.createdCatName.innerHTML = this.catNames[indx];
 
-                    this.clickedThumbNailImg = this.navImages[indx].src;
-                    this.createImgEl.setAttribute('class', 'cat-img');
-                    this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
-                    this.catImgCntnr.appendChild(this.createImgEl);
+                //display the number of clicks
+                this.createDivEl.innerHTML = 0;
+                this.clickedThumbNailImg = this.navImages[indx].src;
+                this.createImgEl.setAttribute('class', 'cat-img');
+                this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
+                this.catImgCntnr.appendChild(this.createImgEl);
                 })
             }
     }
