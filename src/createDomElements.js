@@ -24,7 +24,7 @@ export class CreateDomElements
         this.catNav.appendChild(this.createdCatName);
     }
     /******************************************************************** */
-    clickImage ()
+    iterClicksOnImage ()
     {
         this.createImgEl.addEventListener('click', () =>{
             this.createDivEl.innerHTML++;
@@ -73,12 +73,11 @@ export class CreateDomElements
             for(let indx = 0; indx < this.navImages.length; indx++)
             {
                 this.navImages[indx].addEventListener('click', ()=>{
-                this.clickedThumbNailImg = this.navImages[indx].src;
-                this.createImgEl.setAttribute('class', 'cat-img');
-                this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
-                this.catImgCntnr.appendChild(this.createImgEl);
-
-            })
+                    this.clickedThumbNailImg = this.navImages[indx].src;
+                    this.createImgEl.setAttribute('class', 'cat-img');
+                    this.createImgEl.setAttribute('src', this.clickedThumbNailImg);
+                    this.catImgCntnr.appendChild(this.createImgEl);
+                })
         }
         
     }

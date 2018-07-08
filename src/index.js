@@ -19,6 +19,6 @@ cat.createCatName(catInfo1.catName);
 cat.createText(catText);
 cat.generateThumbnails();
 cat.displayClickedImage();
-cat.clickImage();
+cat.iterClicksOnImage();
 
 
