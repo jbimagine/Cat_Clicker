@@ -12,6 +12,6 @@ cat.createCatName();
 cat.createNumText();
 cat.generateThumbnails();
 cat.displayClickedImage();
-cat.increaseClicksOnImage();
+cat.increaseNumClicksOnImage();
 
 

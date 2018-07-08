@@ -9,28 +9,28 @@ export class CreateDomElements
         this.navImagesWrapper = document.getElementById('nav-images-wrapper');
     }
     /******************************************************************** */
-    createNumText() //creates the number div
+    createNumText() // creates the number div
     {
         this.createDivEl = document.createElement('div');
         this.createDivEl.setAttribute('class', 'cat-cntnr');
         this.catNav.appendChild(this.createDivEl);
     }
     /******************************************************************** */
-    createCatName()
+    createCatName() // creates the cat's name div
     {
         this.createdCatName = document.createElement('div');
         this.createdCatName.setAttribute('class', 'cat-names')
         this.catNav.appendChild(this.createdCatName);
     }
     /******************************************************************** */
-    increaseClicksOnImage () //will increase the number of clicks on the main image
+    increaseNumClicksOnImage () // will increase the number of clicks on the main image
     {
         this.createImgEl.addEventListener('click', () =>{
             this.createDivEl.innerHTML++;
         })
     } 
     /******************************************************************** */
-    generateThumbnails () //will create thumbnails of images
+    generateThumbnails () // will create thumbnails of images
     {
         const catImgs = {
             src1: '/dist/imgs/cat_01.jpg',
@@ -52,7 +52,8 @@ export class CreateDomElements
         }
     }
     /******************************************************************** */
-    displayClickedImage() //function will display the image that is clicked from the thumbnail
+    displayClickedImage() // function will display the image that is clicked from the thumbnail 
+    // along with the cat names and number of clicks
     {
 
         this.catNames = ['Sheeba', 'Basil', 'Laila', 'Rosey', 'Bruno'];
